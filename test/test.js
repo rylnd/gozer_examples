@@ -20,7 +20,7 @@ describe('Gozer', function() {
         return document.title;
       });
 
-      expect(titlePromise).to.eventually.have.string('This most certainly is not the title');
+      return expect(titlePromise).to.eventually.have.string('This most certainly is not the title');
     });
   });
 })
