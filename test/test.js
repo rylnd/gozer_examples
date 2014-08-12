@@ -14,13 +14,13 @@ describe('Gozer', function() {
     page = gozer.visit('/');
   })
 
-  describe("scraping Google's page title", function() {
-    it('should fail', function() {
+  describe('making HTML-based assertions', function() {
+    it("can test a page's title", function() {
       var titlePromise = page.run(function() {
         return document.title;
       });
 
-      return expect(titlePromise).to.eventually.have.string('This most certainly is not the title');
+      return expect(titlePromise).to.eventually.equal('Google');
     });
   });
 })
